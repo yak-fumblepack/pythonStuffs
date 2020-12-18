@@ -56,7 +56,7 @@ async def on_message(message):
     important_words = words[1:]
 
     if message.content.startswith(';;define'):
-        wods = message.content.split()
+        words = message.content.split()
         important_words = words[1:]
         search = discord.Embed(
             title="Searching Wikipedia...",
