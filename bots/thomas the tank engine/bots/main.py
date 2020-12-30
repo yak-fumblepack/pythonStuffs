@@ -43,7 +43,7 @@ async def ginfo(ctx):
 @bot.command()
 async def websay(ctx, *args):
     string_to_output = reduce(lambda acc, x: acc+x+' ', args, "")
-    requests.post(keys.GENERAL_CHAT_WEBHOOK, data=json.dumps({'content': string_to_output}), headers={'Content-type': 'application/json'})
+    requests.post(bot.keys.GENERAL_CHAT_WEBHOOK, data=json.dumps({'content': string_to_output}), headers={'Content-type': 'application/json'})
     requests.post
 
 bot.run(token)
