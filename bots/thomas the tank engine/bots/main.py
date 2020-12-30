@@ -4,7 +4,7 @@ import asyncio
 from dotenv import load_dotenv
 from discord.ext import commands
 import requests
-import keys
+import bots.keys
 from functools import reduce
 import json, wikipedia
 
