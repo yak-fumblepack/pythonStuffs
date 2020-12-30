@@ -46,24 +46,4 @@ async def websay(ctx, *args):
     requests.post(keys.GENERAL_CHAT_WEBHOOK, data=json.dumps({'content': string_to_output}), headers={'Content-type': 'application/json'})
     requests.post
 
-def wiki_summary(arg):
-    definition = wikipedia.summary(arg, sentences=25, chars=1000000000000, auto_suggest=True, redirect=True)
-    return definition
-
-@bot.event
-async def on_message(message):
-    words = message.content.split()
-    important_words = words[1:]
-
-    if message.content.startswith(';;define'):
-        words = message.content.split()
-        important_words = words[1:]
-        search = discord.Embed(
-            title="Searching Wikipedia...",
-            description=wiki_summary(important_words), 
-            color=0x9966cc,
-        )
-        await message.channel.send(content=None, embed=search)
-
-
 bot.run(token)
