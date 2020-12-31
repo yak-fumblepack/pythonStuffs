@@ -20,14 +20,22 @@ async def on_ready():
 @bot.command()
 async def help(ctx):
     author = ctx.message.author
-    embed = discord.Embed(
-        colour= discord.Colour.green()
-    )
-
+    embed = discord.Embed(colour=discord.Colour.green())
     embed.set_author(name='help')
-    embed.add_field(name=';;ginfo', value='Gives the info of guilds', inline=False)
-    embed.add_field(name=';;websay', value="Lets you talk through a webhook to a predetermined server", inline=False)
-    embed.add_field(name=';;define', value="Searches Wikipedia for a definition pertaining to the word", inline=False)
+    embed.add_field(
+        name=';;ginfo', value='Gives the info of guilds', inline=False)
+    embed.add_field(
+        name=';;websay',
+        value="Lets you talk through a webhook to a predetermined server (admin)",
+        inline=False)
+    embed.add_field(
+        name=";;dmu <userid>", 
+        value="Lets you dm a user (admin)", 
+        inline=False)
+    embed.add_field(
+        name=";;dmc <channelid>",
+        value="Lets you send messages into another channel",
+        inline=False)
     await ctx.send(author, embed=embed)
 
 @bot.command()
